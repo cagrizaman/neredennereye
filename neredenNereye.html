@@ -3,9 +3,7 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+    {{>nereden}}
     <div id="map" class="map"></div>
 </body>
 
@@ -14,3 +12,252 @@
   <p>You've pressed the button {{counter}} times.</p>
   <p> Nilos burda!!! </p>
 </template>
+
+<template name="nereden">
+	<div class="form-container">
+<form class="form form-horizontal component-uff" onkeypress="return event.keyCode != 13;" role="form">
+<div data-step>
+<div class="header col-xs-12">
+<h2 class="title">Settings</h2>
+</div>
+<div class="clearfix"></div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInRight">Website Name</label>
+<div class="col-sm-10">
+<input data-sb="fadeInLeft" type="text" class="form-control" data-validation-required="#website_name_error_required" value="jQuery Ultimate Fancy Form" name="website_name">
+<div class="clearfix"></div>
+<div id="website_name_error_required" class="alert alert-danger">
+Website name is required
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInRight">Website Options</label>
+<div class="col-sm-10" data-sb="fadeInLeft">
+<select multiple="multiple" class="em-select">
+<option value="1" selected="selected">Option One</option>
+<option value="2" selected="selected">Option Two</option>
+<option value="3" selected="selected">Option Three</option>
+<option value="4">Option Four</option>
+<option value="5">Option Five</option>
+<option value="6">Option Six</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInRight">More Options</label>
+<div class="col-sm-10" data-sb="fadeInLeft">
+<select multiple="multiple" class="em-select">
+<option value="1" selected="selected">Option One</option>
+<option value="2" selected="selected">Option Two</option>
+<option value="3">Option Three</option>
+<option value="4">Option Four</option>
+<option value="5">Option Five</option>
+<option value="6" selected="selected">Option Six</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInRight">Maximum Login Attempts</label>
+<div class="col-sm-10">
+<input data-sb="fadeInLeft" type="text" class="form-control" data-validation-required="#maximum_login_attemps_error_required" placeholder="Digit Only Container" name="maximum_login_attempts" data-digits-only>
+<div class="clearfix"></div>
+<div id="maximum_login_attemps_error_required" class="alert alert-danger">
+Maximum Login Attempts is required
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-offset-2 col-sm-10">
+<a class="btn btn-success" data-sb="fadeInUp" data-step-next>Next</a>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div data-step>
+<div class="header col-xs-12">
+<h2 class="title">Additional Settings</h2>
+</div>
+<div class="clearfix"></div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInRight">Some Text Setting</label>
+<div class="col-sm-10">
+<input data-sb="fadeInLeft" type="text" class="form-control" data-validation-required="#some_text_setting_error_required" value="Text Settings" name="some_text_setting">
+<div class="clearfix"></div>
+<div id="some_text_setting_error_required" class="alert alert-danger">
+Some Text setting is required
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInRight">Another Text Setting</label>
+<div class="col-sm-10">
+<input data-sb="fadeInLeft" type="text" class="form-control" data-validation-required="#some_text_setting_2_error_required" value="Another Text Settings" name="another_text_setting">
+<div class="clearfix"></div>
+<div id="some_text_setting_2_error_required" class="alert alert-danger">
+Another Text setting is required
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInRight">Copyright Year</label>
+<div class="col-sm-10">
+<input data-sb="fadeInLeft" type="text" class="form-control" data-validation-required="#copyright_year_error_required" placeholder="Maximum 4 Digits Allowed" data-digits-only data-length-max="4" name="copyright_year">
+<div class="clearfix"></div>
+<div id="copyright_year_error_required" class="alert alert-danger">
+Copyright Year is required
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-offset-2 col-sm-10">
+<a class="btn btn-success" data-sb="bounceInUp" data-step-next>Review Changes</a>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div data-step>
+<div class="header col-xs-12">
+<h2 class="title">Review Setting Changes</h2>
+</div>
+<div class="clearfix"></div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInDown">Website Name</label>
+<div class="col-sm-10" data-sb="fadeInUp">
+<span data-input-mirror='[name="website_name"]'></span>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInDown">Maximum Login Attempts</label>
+<div class="col-sm-10" data-sb="fadeInUp">
+<span data-input-mirror='[name="maximum_login_attempts"]'></span>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInDown">Some Text Setting</label>
+<div class="col-sm-10" data-sb="fadeInUp">
+<span data-input-mirror='[name="some_text_setting"]'></span>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInDown">Another Text Setting</label>
+<div class="col-sm-10" data-sb="fadeInUp">
+<span data-input-mirror='[name="another_text_setting"]'></span>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" data-sb="fadeInDown">Copyright Year</label>
+<div class="col-sm-10" data-sb="fadeInUp">
+<span data-input-mirror='[name="copyright_year"]'></span>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-offset-2 col-sm-10">
+<a class="btn btn-success" data-sb="bounceInUp" data-step-finish>Save Settings</a>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</form>
+</div>
+</template> 
+
+
+<template name="nereye">
+	<form>
+	  <div class="form-group">
+	    <label for="NeredenAdres">Nereye?</label>
+	    <input type="text" class="form-control" id="NereyeAdres" placeholder="Adresinizi Giriniz">
+	  </div>
+	  <button type="submit" class="btn btn-default">Devam Et</button>
+	</form>
+</template> 
+<template name="neden">
+<select class="form-control">
+   <option>Menuden seciniz</option>
+  <option>Kentsel Dönüşüm</option>
+  <option>Is degisikligi, yeni sie ulasim kolayligi</option>
+  <option>Daha buyuk bir ev ihtiyaci</option>
+  <option>Kiradaydim ev satin almak istedim</option>
+</select>
+<p>Yukaridaki seceneklerden size uyan yoksa sebebinizi kisaca aciklayiniz </p>
+<textarea class="form-control" rows="3"></textarea>
+<button type="submit" class="btn btn-default">Devam Et</button>
+</template> 
+
+
+
+<template name="deneme">
+	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm">
+    Katilmak Istiyorum
+	</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Nereden Nereye
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form role="form">
+                  <div class="form-group">
+                    <label for="NeredenAdres">Nereden</label>
+                      <input type="text" class="form-control"
+                      id="NeredenAdres" placeholder="Adresi Giriniz"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="NereyeAdres">Nereye</label>
+                      <input type="text" class="form-control"
+                          id="NereyeAdres" placeholder="Adresi Giriniz"/>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                        <input type="checkbox"/> Gizlilik Sozlesmesini kabul ediyorum
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-default">Devam</button>
+                </form>
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Post Info -->
+<div style='position:fixed;bottom:0;left:0; background:lightgray;width:100%;'>
+    About this SO Question:
+    <a href='http://stackoverflow.com/q/26562900/1366033'>
+        Twitter Bootstap - form in Modal fomatting
+    </a><br/>
+    Fork This Skeleton Here: 
+    <a href='http://jsfiddle.net/KyleMit/kcpma/'>
+        Bootstrap 3 Skeleton
+    </a><br/>
+</div>
+</template> 
+
+
