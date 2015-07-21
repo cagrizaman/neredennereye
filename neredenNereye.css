@@ -2,3 +2,41 @@
 	width:100%;
 	height:1090px;
 	}/* CSS declarations go here */
+#surveycontainer{
+	position: fixed;
+	top: 5%;
+	left:5%;
+	height: auto;
+	/*width: 40%;*/
+	z-index: 99999;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 15px;
+	padding: 10px;
+	}
+.nereden-grafic{
+		width: 60px;
+		height: 60px;
+	}
+
+.header{
+	text-align: center;
+}
+
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
+    background: #0D4D4D;
+    border: none;
+}
+ 
+.btn-success, .btn-success:active, .btn-success.active {
+    background: #407F7F;
+    box-shadow: none;
+    border: none;
+}
+
+.bottom{
+	text-align: right;
+}
+.dates-select{
+	text-align: center;
+}

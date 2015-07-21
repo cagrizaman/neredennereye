@@ -20,29 +20,53 @@ if (Meteor.isClient) {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([41.015137, 28.979530]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+  
+
+var neredenIcon = L.icon({
+    iconUrl: 'neredenmarker.png',
+
+    iconSize:     [60, 50], 
+    iconAnchor:   [14, 50],
+});
+
+  L.marker([41.015137, 28.979530], {icon: neredenIcon}).addTo(map);
+
+
+  var nereyeIcon = L.icon({
+    iconUrl: 'nereyemarker.png',
+
+    iconSize:     [60, 50], 
+    iconAnchor:   [14, 50],
+});
+
+  L.marker([41.125137, 29.979530], {icon: nereyeIcon}).addTo(map);
+    
+
+var pointA = new L.LatLng(41.015137, 28.979530);
+var pointB = new L.LatLng(41.125137, 29.979530);
+var pointList = [pointA, pointB];
+
+var Polyline= new L.Polyline(pointList, {
+color: '#D49A6A',
+weight: 6,
+opacity: 0.9,
+smoothFactor: 1
+});
+Polyline.addTo(map);
+
+    map.fitBounds(Polyline.getBounds());
 
       })
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
+  Template.template_survey.rendered=function(){
+    $("#input_date").datepicker( {
+    format: "mm-yyyy",
+    startView: "months", 
+    minViewMode: "months"
+});
 
-  Template.nereden.rendered(function(){
-         jQuery(".component-uff").uff()
-
-  });
+  };
 }
 
 if (Meteor.isServer) {
