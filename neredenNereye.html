@@ -4,7 +4,7 @@
 
 <body>
     {{>template_survey}}
-    <div id="map" class="map"></div>
+    {{>map}}
 </body>
 
 <template name="template_survey">
@@ -197,6 +197,11 @@
   </div>
 </template> 
 
+<template name="map">  
+  <div class="map-container">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
+</template>  
 
 
 

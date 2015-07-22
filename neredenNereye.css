@@ -1,6 +1,16 @@
+html, body{
+	height:100%;
+}
+
 #map{
-	width:100%;
-	height:1090px;
+  width: 100%;
+  max-width: 100%;
+  height: 500px;
+	}/* CSS declarations go here */
+.map-container{
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
 	}/* CSS declarations go here */
 #surveycontainer{
 	position: fixed;
@@ -39,4 +49,8 @@
 }
 .dates-select{
 	text-align: center;
+}
+
+.pac-container{
+	z-index: 999999;
 }
