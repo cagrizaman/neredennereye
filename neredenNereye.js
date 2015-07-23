@@ -84,7 +84,7 @@ Template.template_survey.rendered=function(){
   };
 
 
-  Template.map.onCreated(function() {  
+Template.map.onCreated(function() {  
   GoogleMaps.ready('map', function(map) {
      console.log("I'm ready!");
        var neredenCustom = {
@@ -92,22 +92,104 @@ Template.template_survey.rendered=function(){
                     size: new google.maps.Size(60,50),
                     origin: new google.maps.Point(0,0),
                     anchor: new google.maps.Point(14,50)
-    };
-     var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(41.000,29.0),
+       };
+       var nereyeCustom = {
+                    url:'nereyemarker.png',
+                    size: new google.maps.Size(60,50),
+                    origin: new google.maps.Point(0,0),
+                    anchor: new google.maps.Point(14,50)
+       };
+
+  
+     var neredenMarker=null;
+     var nereyeMarker = null;
+
+    var defaultBounds = map.instance.getBounds();
+
+     var input = document.getElementById('nereden');
+      var options = {
+      bounds: defaultBounds,
+      types: ['geocode']
+      };
+
+    
+
+     var input2 = document.getElementById('nereye');
+     
+    function markNereden(){
+      if(neredenMarker != null){
+        neredenMarker.setMap(null);
+      }
+      var place = autocomplete.getPlace();
+      var marker = new google.maps.Marker({
+              position: place.geometry.location,
               map: map.instance,
               icon: neredenCustom
         });
-  
-    var defaultBounds = map.instance.getBounds();
+       neredenMarker=marker;
+       map.instance.panTo(place.geometry.location);
 
-    var input = document.getElementById('nereden');
-    var options = {
-      bounds: defaultBounds,
-      types: ['geocode']
-};
+     }
 
-autocomplete = new google.maps.places.Autocomplete(input, options);
+      function markNereye(){
+      if(nereyeMarker != null){
+        nereyeMarker.setMap(null);
+      }
+      var place = autocomplete2.getPlace();
+      var marker = new google.maps.Marker({
+              position: place.geometry.location,
+              map: map.instance,
+              icon: nereyeCustom
+
+
+        });
+       nereyeMarker=marker;
+       map.instance.panTo(place.geometry.location);
+       setTimeout(drawPath(),1000);
+
+     }
+       var lineSymbol = {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 4,
+          strokeColor: '#000'
+        };
+
+     
+      function drawPath(){
+              line = new google.maps.Polyline({
+                path: [neredenMarker.getPosition(),nereyeMarker.getPosition()],
+                strokeColor: '#669999',
+                strokeOpacity: .7,
+                strokeWeight: 1,
+                icons: [{
+                  icon: lineSymbol,
+                  offset: '100%'
+                }],
+                map: map.instance
+              });
+
+              animateCircle();
+               }
+
+      function animateCircle() {
+          var count = 0;
+          window.setInterval(function() {
+            count = (count + 1) % 200;
+
+            var icons = line.get('icons');
+            icons[0].offset = (count / 2) + '%';
+            line.set('icons', icons);
+        }, 20);
+    }
+
+   autocomplete = new google.maps.places.Autocomplete(input, options);
+   autocomplete2= new google.maps.places.Autocomplete(input2, options);
+   google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    markNereden();
+  });
+    google.maps.event.addListener(autocomplete2, 'place_changed', function() {
+    markNereye();
+  });
 
   });
   });
