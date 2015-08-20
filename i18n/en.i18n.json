@@ -1,0 +1,35 @@
+{
+"hello":"Hey there!",
+"move_from" : "Where did you move from?",
+"err_move_from": "Please provide a valid address.",
+"ph_move_from":"Start typing",
+"move_to" : "Where did you move to?",
+"err_move_to":"Please provide a valid address.",
+"ph_move_to":"Start typing",
+"when" : "When is the last time you moved?",
+"err_when" : "Please provide a valid date",
+"ph_when_month": "Month",
+"ph_when_year": "Year",
+"how_many":"How many people did move with you?",
+"ph_how_many" :"Please enter the number of people",
+"err_how_many":"Please provide a valid number",
+"why":"Why?",
+"review":"Review information and submit",
+
+
+"next":"Next",
+"prev":"Previous",
+"January":"January",
+"February":"February",
+"March":"March",
+"April":"April",
+"May":"May",
+"June": "June",
+"July":"July",
+"August":"August",
+"September":"September",
+"October":"October",
+"November":"November",
+"December":"December"
+
+}
